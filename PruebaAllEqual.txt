@@ -11,7 +11,7 @@ f := 2
 a := (((9 + b) - c) / 3 * 5)
 e := 31.33
 
-IF(AllEquals([a, b], [c, d], [e, f])) {
+IF(AllEquals([a, b, e], [c, d, f])) {
 	PRINT "B_MENOR"
 	IF (b >= c) {
 		PRINT "B_MAYOR_IGUAL"

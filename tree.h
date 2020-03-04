@@ -86,7 +86,6 @@ void cerrarListaAllEqual() {
   }
 
   if(allEqual->list != NULL) {
-    printf("\n ENTRA A cerrarListaAllEqual\n");
     ael* aux = allEqual;
     allEqual = allEqual->nextList;
     allEqual->prevList = aux;
@@ -99,7 +98,6 @@ void cerrarListaAllEqual() {
 }
 
 void comparar(ast* value1, ast* value2) {
-  printf("\n comparo %s vs %s\n", value1->value, value2->value);
   ast* comparison = newNode("==", value1, value2);
   if(allEqualCondition == NULL) {
     allEqualCondition = comparison;
@@ -117,22 +115,16 @@ ast* crearNodosCondicionAllEqual() {
     int listPosition = 0;
 
     cont ++;
-    printf("\n cambio de lista allEqual %d \n", cont);
 
     while(allEqual->list) {
       int auxListPosition = 0;
-      // printf("\n Me muevo en la lista de allEqual \n");
-      // printf("\n cambio de lista auxAllEqual\n");
 
-      // while(auxListPosition < listPosition) {
-      //   printf("%d %d\n",listPosition, auxListPosition);
-      //   if(auxAllEqual->list->prevItem) {
-      //     auxAllEqual->list = auxAllEqual->list->prevItem;
-      //   }
-      //   auxListPosition++;
-      // }
-
-      printf(" %s ", allEqual->list->item->value);
+      while(auxListPosition < listPosition) {
+        if(auxAllEqual->list->prevItem) {
+          auxAllEqual->list = auxAllEqual->list->prevItem;
+        }
+        auxListPosition++;
+      }
 
       while(auxAllEqual) {
           comparar(allEqual->list->item, auxAllEqual->list->item);
@@ -160,7 +152,6 @@ el* crearNuevaListaExpresiones() {
 
 void insertarNodoEnListaAllEqual (ast* node) {
   if(listaAllEqual == NULL) {
-    printf("\n ENTRA ACAAAA %s\n", node->value);
     listaAllEqual = crearNuevaListaExpresiones();
     listaAllEqual->item = node;
     listaAllEqual->nextItem = crearNuevaListaExpresiones();

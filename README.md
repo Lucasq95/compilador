@@ -7,3 +7,9 @@ Ejemplo:
 ```
 GeneraExe.bat Prueba.txt
 ```
+
+## Para probar la funcion AllEqual
+
+```
+GeneraExe.bat PruebaAllEqual.txt
+```

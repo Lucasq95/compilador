@@ -105,35 +105,7 @@ COPY ENDP
 
 	; Condition
 	FLD f
-	FCOMP d
-	FSTSW AX
-	SAHF
-	JNE IF_0
-
-	; Condition
-	FLD f
-	FCOMP b
-	FSTSW AX
-	SAHF
-	JNE IF_0
-
-	; Condition
-	FLD e
-	FCOMP d
-	FSTSW AX
-	SAHF
-	JNE IF_0
-
-	; Condition
-	FLD e
-	FCOMP b
-	FSTSW AX
-	SAHF
-	JNE IF_0
-
-	; Condition
-	FLD d
-	FCOMP d
+	FCOMP e
 	FSTSW AX
 	SAHF
 	JNE IF_0
@@ -147,28 +119,7 @@ COPY ENDP
 
 	; Condition
 	FLD c
-	FCOMP d
-	FSTSW AX
-	SAHF
-	JNE IF_0
-
-	; Condition
-	FLD c
-	FCOMP b
-	FSTSW AX
-	SAHF
-	JNE IF_0
-
-	; Condition
-	FLD d
-	FCOMP b
-	FSTSW AX
-	SAHF
-	JNE IF_0
-
-	; Condition
-	FLD c
-	FCOMP b
+	FCOMP a
 	FSTSW AX
 	SAHF
 	JNE IF_0
